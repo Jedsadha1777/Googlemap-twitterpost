@@ -16,7 +16,8 @@ define('_consumer_key'     , ‘CONSUMER_KEY’);
 define('_consumer_secret'  , ‘CUNSUMER_SECRET’);
 ```
 
-###Configuration
+##Configuration
+###
 Browse to the /common/js/map.js for config distance , template
 ```php
 var tweets_distance = 50; 
