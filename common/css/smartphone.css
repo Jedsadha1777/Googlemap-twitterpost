@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* All */
+@media only screen and (min-device-width : 320px) and (max-device-width : 979px) {
+ 
+#wapper{min-width:100%;} 
+header{ min-width:100%; }
+div.content{min-width:100%;  }
+footer{min-width:100%; }
+ 
+.box_search{width:100%; }
+ 
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 767px)  {
+.col-md-6{width:100%;}
+.col-md-3{display:none;}	
+
+.map_box .tweets_area{font-size:2em;}
+.box_search{background:#4b8db5;  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; }
+}

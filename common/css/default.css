@@ -6,107 +6,198 @@ html5doctor.com Reset Stylesheet v1.6.1
 Last Updated: 2010-09-17
 Author: Richard Clark - http://richclarkdesign.com 
 */
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:none;
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:none;
 }
 body {
-    line-height:1;
+	line-height:1;
 }
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
-    display:block;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
 }
 nav ul {
-    list-style:none;
+	list-style:none;
 }
 blockquote, q {
-    quotes:none;
+	quotes:none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
+blockquote:before, blockquote:after, q:before, q:after {
+	content:'';
+	content:none;
 }
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:none;
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:none;
 }
 /* change colours to suit your needs */
 ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
+	background-color:#ff9;
+	color:#000;
+	text-decoration:none;
 }
 /* change colours to suit your needs */
 mark {
-    background-color:#ff9;
-    color:#000; 
-    font-style:italic;
-    font-weight:bold;
+	background-color:#ff9;
+	color:#000;
+	font-style:italic;
+	font-weight:bold;
 }
 del {
-    text-decoration: line-through;
+	text-decoration: line-through;
 }
 abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
+	border-bottom:1px dotted;
+	cursor:help;
 }
 table {
-    border-collapse:collapse;
-    border-spacing:0;
+	border-collapse:collapse;
+	border-spacing:0;
 }
 /* change border colour to suit your needs */
 hr {
-    display:block;
-    height:1px;
-    border:0;   
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
+	display:block;
+	height:1px;
+	border:0;
+	border-top:1px solid #cccccc;
+	margin:1em 0;
+	padding:0;
 }
 input, select {
-    vertical-align:middle;
+	vertical-align:middle;
 }
-
 /*
 -------------------------------------------------------------------*/
-.clear {clear:both;}
-
+.clear {
+	clear:both;
+}
+.hide {
+	display:none;
+}
+input {
+	border-radius: 0;
+}
+input {
+	-webkit-appearance: none;
+}
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
 /*Body
 -------------------------------------------------------------------*/
-body { font-size:14px; color:#333; font-family:Arial, Helvetica, sans-serif; }
-#wapper{ min-width:980px; margin:auto;}
-
-header{width:980px; margin:auto;}
-div.content{width:980px; margin:auto;}
-footer{width:980px; margin:auto;}
-
-.box_search{height:150px; width:100%; padding-top:25px; padding-left:16px; padding-right:16px; }
-#map_playground{width:100%; height:480px; background:#CCC; position:relative;}
-#map_playground .marker{ position:absolute; width:50px; height:50px; background:#FFF; } 
-
-.map_box{ position:relative; width:100%; height:480px;}
-.map_box .tweets_area{color:#5d9dbe; font-size:2.5em; text-align:center; width:100%; left:0px; top:25px; position:absolute; z-index:9999; font-weight:bold;  text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;   text-transform: uppercase;  }
-
-
-
+body {
+	font-size:14px;
+	color:#333;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#wapper {
+	min-width:980px;
+	margin:auto;
+}
+/* Header */
+header {
+	min-width:980px;
+	width:100%;
+	background:#4b8db5;
+	margin:auto;
+}
+.pac-container.pac-logo {
+	z-index:9999;
+}
+.box_search {
+	height:45px;
+	width:980px;
+	margin:auto;
+	padding-top:0px;
+	background:#fffb9c;
+}
+.box_search #inp_search {
+	font-size:16px;
+	height:21px;
+	padding:11px 26px 11px 10px;
+	float:left;
+	width:100%;
+	border:none;
+}
+.btn_search, .btn_history {
+	background:#4b8db5;
+	color:#fffb9c;
+	font-size:18px;
+	height:45px;
+	float:left;
+	border:#fffb9c solid 1px;
+	text-transform: uppercase;
+	cursor:pointer;
+	width:100%;
+}
+.btn_history {
+	border-left:none;
+}
+.btn_search:hover, .btn_history:hover {
+	background:#0081b6;
+}
+/* Content */
+div.content {
+	min-width:980px;
+	width:100%;
+	height:100%;
+	margin:auto;
+}
+#map_playground {
+	width:100%;
+	height:100%;
+	min-height:150px;
+	background:#CCC;
+	position:relative;
+}
+.map_box {
+	position:relative;
+	width:100%;
+	height:100%;
+}
+.map_box .tweets_area {
+	color:#5d9dbe;
+	font-size:3em;
+	text-align:center;
+	width:100%;
+	left:0px;
+	top:50px;
+	position:absolute;
+	z-index:9998;
+	font-weight:bold;
+	text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF;
+	text-transform: uppercase;
+}
+/* Footer */
+footer {
+	min-width:980px;
+	width:100%;
+	background:#4b8db5;
+	margin:auto;
+	display:none;
+}
+.row {
+	width:100%;
+}
+.col-md-3 {
+	width:25%;
+	float:left;
+}
+.col-md-6 {
+	width:50%;
+	float:left;
+}
