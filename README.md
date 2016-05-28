@@ -1,6 +1,7 @@
 # Google Map Twitter Post
 
 The Google Map Twitter Post give you showing location based Tweets.
+Please check the [Demo page](http://765space.com/twitter/).
 
 ##How to use?
 ###
@@ -23,3 +24,6 @@ Browse to the /common/js/map.js for config distance , template
 var tweets_distance = 50; 
 var map_template = [];
 ```
+
+###Reference
+This project use [twitter-api-php](https://github.com/J7mbo/twitter-api-php) for feed Twitter data.
