@@ -2,44 +2,48 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, user-scalable=yes" >
 <meta name="format-detection" content="telephone=on">
 <title>Map Based Search : by Jedsadha Rojanaphan</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, user-scalable=no" >
 <link href="common/css/modernizr.css" type="text/css" rel="stylesheet">
 <link href="common/css/default.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAiDtp66L7FmpSFWIX6oVCcopCc1eshPKU&sensor=false&libraries=places">
-</script>
-
-
+<link href="common/css/smartphone.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAiDtp66L7FmpSFWIX6oVCcopCc1eshPKU&sensor=false&libraries=places"></script>
 </head>
 <body>
-<div  id="wapper">
-	<!--Header-->
-	<header>
-    	
-            <div class="box_search">
-            	<form method="post" action="?">
-                    <input type="text" id="inp_search" name="inp_search" value="" placeholder="Bangkok Thailand" />
-                    <input type="submit" value="Search" />
-                </form>
-            </div>
-        
-    </header>
-    <!--End Header-->
-    <!--Content-->
-    <div class="content">
-        <div class="map_box">
-             <div class="tweets_area">TWEETS ABOUT </div>
-            <div id="map_playground"></div>
+<div  id="wapper"> 
+  <!--Header-->
+  <header>
+    <div class="box_search">
+      <form method="post" action="?">
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" id="inp_search" name="inp_search" value="" placeholder="City Name" />
+          </div>
+          <div class="col-md-3">
+            <input type="submit" class="btn_search" value="Search" />
+          </div>
+          <div class="col-md-3">
+            <input type="button" class="btn_history" value="History" />
+          </div>
+          <div class="clear"></div>
         </div>
+      </form>
     </div>
-    <!--End Content-->
-    <!--Footer-->
-    <footer>
-    </footer>
-    <!--End Footer-->
+  </header>
+  <!--End Header--> 
+  <!--Content-->
+  <div class="content">
+    <div class="map_box">
+      <div class="tweets_area noselect">TWEETS ABOUT </div>
+      <div id="map_playground"></div>
+    </div>
+  </div>
+  <!--End Content--> 
+  <!--Footer-->
+  <footer></footer>
+  <!--End Footer--> 
 </div>
 <script type="text/javascript" src="common/js/map.js"></script>
 </body>
