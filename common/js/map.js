@@ -47,7 +47,7 @@ function addMarker(arr_marker){
 					
 		for(var i = 0; i < numPlatforms; i++){
 			  
-		  _pos_img = arr_marker[i][1];		 
+			_pos_img = arr_marker[i][1];		 
 		  
 			var lat = parseFloat(arr_marker[i][4]);
 			var long =  parseFloat(arr_marker[i][5]);
@@ -58,26 +58,24 @@ function addMarker(arr_marker){
 				_pos_img = 'images/?href='+_pos_img;	
 			}
 			
-			
 		 	marker[i] = new google.maps.Marker({ map: map, icon : _pos_img ,			
-											      animation: google.maps.Animation.DROP, 
-												  infoWindowIndex  : i , 
-												  position: new google.maps.LatLng( parseFloat(arr_marker[i][4]),parseFloat(arr_marker[i][5]) )
-												 });
+							    animation: google.maps.Animation.DROP, 
+							    infoWindowIndex  : i , 
+							    position: new google.maps.LatLng( parseFloat(arr_marker[i][4]),parseFloat(arr_marker[i][5]) )
+							   });
 				
-			marker[i].addListener('click', function() {			
+			marker[i].addListener('click', function() {		
 													  
-				 for (j = 0; j < numPlatforms ; j++){
-					 infowindow[j].close();
-			     }
+				for (j = 0; j < numPlatforms ; j++){
+					infowindow[j].close();
+			  	}
 
-                 infowindow[this.infoWindowIndex].open(map, marker[this.infoWindowIndex]);
+                 		infowindow[this.infoWindowIndex].open(map, marker[this.infoWindowIndex]);
 			 
-			  });
+			});
 
-      		  marker[i].setMap(map);
-			  
-			  markers.push( marker[i] );
+      		  	marker[i].setMap(map);
+			markers.push( marker[i] );
 
 		}
 	}
@@ -90,7 +88,8 @@ function postMarker(getlocation){
 				
 		var infowindow = new google.maps.InfoWindow();
   		
-		jQ.post("process/feed_twitter.php", {'inp_geocode' : getlocation , 'distance' : tweets_distance }, function( json ) {
+		jQ.post("process/feed_twitter.php", {'inp_geocode' : getlocation , 
+						     'distance' : tweets_distance }, function( json ) {
 			
 			var data_feed  = jQ.parseJSON( json);
 			var arr_marker = [];
@@ -284,9 +283,7 @@ jQ(document).ready( function(){
      });
 	/* end search location - optional */
 	
-	
 	/* responsive page setting */
 	responsive_template_setting();
-	
 	
 }); //docReady
