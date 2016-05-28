@@ -17,6 +17,6 @@ define('_consumer_secret'  , ‘CUNSUMER_SECRET’);
 ```
 - Browse to the /common/js/map.js for config distance , template
 ```php
-tweets_distance = 50; 
+var tweets_distance = 50; 
 var map_template = [];
 ```
