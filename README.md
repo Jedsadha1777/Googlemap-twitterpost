@@ -15,7 +15,9 @@ define('_oauth_access_token_secret'    , ‘TWITTER_ACCESS_TOKEN_SECRET’);
 define('_consumer_key'     , ‘CONSUMER_KEY’);
 define('_consumer_secret'  , ‘CUNSUMER_SECRET’);
 ```
-- Browse to the /common/js/map.js for config distance , template
+
+###Configuration
+Browse to the /common/js/map.js for config distance , template
 ```php
 var tweets_distance = 50; 
 var map_template = [];
