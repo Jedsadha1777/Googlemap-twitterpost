@@ -125,6 +125,43 @@ function postMarker(getlocation){
 	
 }
 
+function keyinput_search(){
+	if (jQ.trim( jQ('#'+inp_search_id).val()) != ''){
+			
+			txt_address = jQ.trim(jQ('#'+inp_search_id).val());
+			
+			jQ.post("http://maps.googleapis.com/maps/api/geocode/json?address="+txt_address, function( json ) {
+										 
+				if ( (json.results).length > 0){
+				
+					place_id =   json.results[0].place_id;	
+					
+					address_list = json.results[0].address_components;
+					
+					if (address_list.length){
+						
+            			map.setCenter({lat:json.results[0].geometry.location.lat , lng :json.results[0].geometry.location.lng });
+						map.setZoom(map_zoom);
+						
+						inpLocation = json.results[0].geometry.location.lat + ',' +json.results[0].geometry.location.lng
+						postMarker(inpLocation);
+						
+						for (i = 0 ; i < address_list.length ; i++){
+							
+							if ( (address_list[i].types[0] ==  'locality') || 
+							     (address_list[i].types[0] ==  'administrative_area_level_1') ){
+								
+								jQ(tweets_text_area).html( txt_tweets_about+address_list[i].long_name);
+	
+							}
+							
+						}
+					}					
+				}
+			});
+	}
+}
+
 function template_resize(){
 	var _win_height = jQ(window).height()
 	var _footer_height = jQ('header').height();
@@ -151,9 +188,15 @@ function responsive_template_setting(){
 jQ(document).ready( function(){
 	
 	/* view did load */		
-	jQ(".box_search").find("input, button").filter(':submit').click(
+	jQ('form[name="box_search"]').find("input,select,button").filter(':submit').click(
 	function(event) {
 		event.preventDefault();
+	});
+	
+	jQ('form[name="box_search"]').keypress(function(e){
+    		if ( e.which == 13 ) return false;
+   
+    		if ( e.which == 13 ) e.preventDefault();
 	});
 	
 	var myOptions = { center: new google.maps.LatLng(default_geo_lat,default_geo_long), 
@@ -207,41 +250,17 @@ jQ(document).ready( function(){
 	/* end view did load */
 	
 	/* search by click button */
-	jQ('.btn_search').click( function(){
-		if (jQ.trim( jQ('#'+inp_search_id).val()) != ''){
-			
-			txt_address = jQ.trim(jQ('#'+inp_search_id).val());
-			
-			jQ.post("http://maps.googleapis.com/maps/api/geocode/json?address="+txt_address, function( json ) {
-										 
-				if ( (json.results).length > 0){
-				
-					place_id =   json.results[0].place_id;	
-					
-					address_list = json.results[0].address_components;
-					
-					if (address_list.length){
-						
-            			map.setCenter({lat:json.results[0].geometry.location.lat , lng :json.results[0].geometry.location.lng });
-						map.setZoom(map_zoom);
-						
-						inpLocation = json.results[0].geometry.location.lat + ',' +json.results[0].geometry.location.lng
-						postMarker(inpLocation);
-						
-						for (i = 0 ; i < address_list.length ; i++){
-							
-							if ( (address_list[i].types[0] ==  'locality') || 
-							     (address_list[i].types[0] ==  'administrative_area_level_1') ){
-								
-								jQ(tweets_text_area).html( txt_tweets_about+address_list[i].long_name);
+	jQ('form[name="box_search"]').keypress(function(e){
+    	if ( e.which == 13 ) {
+		document.activeElement.blur();
+    		jQ("input").blur();
+			keyinput_search();
+		}
+	});
 	
-							}
-							
-						}
-					}					
-				}
-			});
-		}	
+	
+	jQ('.btn_search').click( function(){
+		keyinput_search();
 	});
 	/* end search by click button */
 	
